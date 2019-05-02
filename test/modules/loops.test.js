@@ -2,6 +2,7 @@
 let testObj = { firstName: "Theo", middleName: "", lastName: "Gerrard" }
 
 function onlyTruthy(obj) {
+    if (typeof obj == "undefined") return false
     for(let prop in obj) {
         if (!obj[prop]) return false
     }
@@ -25,16 +26,5 @@ describe("loops.js", () => {
         it("Returns a new object with only truthy values", () => {
            chai.assert.isTrue(onlyTruthy(truthyExtractor(testObj)), "The return object should only contain truthy values.")
         })
-    })
-    describe("letterChecker Function", () => {
-       it("returns a string", () => {
-          chai.assert.isString(letterChecker('qrsuv'), "The return type must be a string.")
-       })
-       it("returns the missing letter", () => {
-          chai.assert.strictEqual(letterChecker('qrsuv'), 't', "You must return the missing letter.")
-       })
-       it('returns "no missing letters" if all letters are accounted for', () => {
-          chai.assert.strictEqual(letterChecker('cdefghi'), 'no missing letters', "If all letters are account for, return 'no missing letters'")
-       })
     })
 })

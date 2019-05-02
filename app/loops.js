@@ -9,7 +9,9 @@ function rangeTotal(n1, n2) {
     // your code above
 }
 
+
 // ------------------------------------------
+
 
 // 2. Write a function that will iterate over the properties of the provided object and return a new object with only the key/value pairs of the provided object whose value is truthy.
 // Example:
@@ -21,17 +23,5 @@ function truthyExtractor(obj) {
 
 }
 
+
 // ------------------------------------------
-
-// 3. Write a function that will iterate over an alphabetized string and return the missing letter. If there isn't a missing letter, return "no missing letters".
-//Example:
-    // input: 'qrsuv'
-    // output: 't'
-//Example:
-    // input: 'cdefghi'
-    // output: 'no missing letters'
-//Hint: Utilize the string prototype method charCodeAt and generic method fromCharCode
-
-function letterChecker(str) {
-
-}
