@@ -11,6 +11,11 @@ function onlyTruthy(obj) {
 // #endregion
 
 describe("loops.js", () => {
+    describe("loopSyntax Function", () => {        
+       it("doesn't return until the loop has completed counting down", function() {
+           chai.assert.isTrue(loopSyntax(), "Count down from 10,000,000 before you return.")
+       })
+    })
     describe("rangeTotal Function", () => {
         it("returns a number", () => {
             chai.assert.isNumber(rangeTotal(1,3), "The return type must be a number.")

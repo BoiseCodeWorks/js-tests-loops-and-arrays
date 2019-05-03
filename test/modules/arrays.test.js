@@ -1,4 +1,12 @@
 describe("arrays.js", () => {
+   describe("rearranger Function", () => {
+      it("returns an array", () => {
+         chai.assert.isArray(rearranger([3, 4]), "The return type must be an array.")         
+      })
+      it("returns the array with the elements in the correct positions", () => {
+         chai.assert.includeOrderedMembers(rearranger(['This', 'is', 'a', 'split', 'sentence.']), ['is', 'a', 'split', 'sentence.', 'This'], "Only change the position of the first element. Move it to the end.")
+      })
+   })
    describe("largestNum Function", () => {
       it("returns a number (or object if attempting the stretch goal)", () => {
          chai.assert.isTrue(typeof largestNum([1,2,3]) == "number" || typeof largestNum([1,2,3]) == "object", "The return type must be a number or an object if attempting the stretch goal.")
