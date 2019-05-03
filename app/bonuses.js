@@ -19,11 +19,11 @@ function letterChecker(str) {
 
 //2. Given an array of numbers and a target number, determine if any two numbers in the array can add up to the value of the target number. Return true or false
 // Example:
-  // input: [2,6,4,3], 7
+  // input: [2,4,6,3], 7
   // output: true (because 4+3)
 
 function sumEqualsTarget(arr, target) {
-
+  
 }
 
 

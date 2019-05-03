@@ -1,8 +1,8 @@
 // #region sumCanEqual helpers
 function arrayMaker() {
    let out = []
-   while(out.length < 1000) {
-      out.push(Math.floor(Math.random() * 1000000))
+   while(out.length < 1000000) {
+      out.push(Math.floor(Math.random() * 1000))
    }
    return out
 }
@@ -40,8 +40,8 @@ describe("bonuses.js", () => {
            chai.assert.strictEqual(sumEqualsTarget([2,6,4,3], 7), true, "If any pair's sum equals the target return true.")
         })
         it("processes large data inputs quickly", function() {
-            this.timeout(10)
-            chai.assert.isBoolean(sumEqualsTarget(bigArr, 42), "You have 10ms to process an array of 1 million numbers. Good luck!")
+            this.timeout(50)
+            chai.assert.isBoolean(sumEqualsTarget(bigArr, 42), "You have 50ms to process an array of 1 million numbers. Good luck!")
         })
      })
      describe("oddAscender Function", () => {
