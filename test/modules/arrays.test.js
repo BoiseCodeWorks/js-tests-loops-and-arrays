@@ -1,5 +1,5 @@
 describe("arrays.js", () => {
-   describe("rearranger Function", () => {
+   describe("1. rearranger Function", () => {
       let rearranger = window["rearranger"]
       it("returns an array", () => {
          chai.assert.isArray(rearranger([3, 4]), "The return type must be an array.")
@@ -8,7 +8,7 @@ describe("arrays.js", () => {
          chai.assert.includeOrderedMembers(rearranger(['This', 'is', 'a', 'split', 'sentence.']), ['is', 'a', 'split', 'sentence.', 'This'], "Only change the position of the first element. Move it to the end.")
       })
    })
-   describe("largestNum Function", () => {
+   describe("2. largestNum Function", () => {
       let largestNum = window["largestNum"]
       it("returns a number (or object if attempting the stretch goal)", () => {
          chai.assert.isTrue(typeof largestNum([1, 2, 3]) == "number" || typeof largestNum([1, 2, 3]) == "object", "The return type must be a number or an object if attempting the stretch goal.")
@@ -22,7 +22,7 @@ describe("arrays.js", () => {
          })
       })
    })
-   describe("elemsTimesLength Function", () => {
+   describe("3. elemsTimesLength Function", () => {
       let elemsTimesLength = window["elemsTimesLength"]
       it("returns an array", () => {
          chai.assert.isArray(elemsTimesLength([3]), "The return type must be an array.")
@@ -31,7 +31,7 @@ describe("arrays.js", () => {
          chai.assert.includeOrderedMembers(elemsTimesLength([4, 2, 1, 7]), [16, 8, 4, 28], "Returns an array containing modified elements of the given array.")
       })
    })
-   describe("arrayFlattener Function", () => {
+   describe("4. arrayFlattener Function", () => {
       let arrayFlattener = window["arrayFlattener"]
       it("returns an array", () => {
          chai.assert.isArray(arrayFlattener([3]), "The return type must be an array.")

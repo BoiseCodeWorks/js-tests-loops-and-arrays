@@ -21,7 +21,7 @@ function arraysMatch(act, exp) {
 // #endregion
 
 describe("bonuses.js", () => {
-   describe("letterChecker Function", () => {
+   describe("1. letterChecker Function", () => {
       let letterChecker = window["letterChecker"]
       it("returns a string", () => {
          chai.assert.isString(letterChecker('qrsuv'), "The return type must be a string.")
@@ -33,7 +33,7 @@ describe("bonuses.js", () => {
          chai.assert.strictEqual(letterChecker('cdefghi'), 'no missing letters', "If all letters are account for, return 'no missing letters'.")
       })
    })
-   describe("sumEqualsTarget Function", () => {
+   describe("2. sumEqualsTarget Function", () => {
       let sumEqualsTarget = window["sumEqualsTarget"]
       it("returns a bool", () => {
          chai.assert.isBoolean(sumEqualsTarget([1, 1], 2), "The return type must be a bool.")
@@ -46,7 +46,7 @@ describe("bonuses.js", () => {
          chai.assert.isBoolean(sumEqualsTarget(bigArr, 42), "You have 50ms to process an array of 1 million numbers. Good luck!")
       })
    })
-   describe("oddAscender Function", () => {
+   describe("3. oddAscender Function", () => {
       let oddAscender = window["oddAscender"]
       it("returns an array", () => {
          chai.assert.isArray(oddAscender([1, 2]), "The return type must be an array.")
