@@ -14,7 +14,12 @@ describe("loops.js", () => {
     describe("1. loopSyntax Function", () => {
         let loopSyntax = window["loopSyntax"]
         it("doesn't return until the loop has completed counting down", function () {
-            chai.assert.isTrue(loopSyntax(), "Count down from 10,000,000 before you return.")
+            this.slow(2000)
+            chai.assert.isTrue((() => {
+                let s = performance.now()
+                loopSyntax()
+                return performance.now() - s > 25
+            })(), "Count down from 100,000,000 before you return.")
         })
     })
     describe("2. rangeTotal Function", () => {
