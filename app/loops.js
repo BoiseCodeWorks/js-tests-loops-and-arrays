@@ -1,6 +1,11 @@
 // 0. Within the loopSyntax function, write a while loop that counts every number from 10,000,000 down to 0. Return true after the loop completes.
 
 function loopSyntax() {
+  // let i = 10000000
+  // while (i > 0) {
+  //   i--
+  // }
+  // return true
 }
 
 
@@ -13,6 +18,11 @@ function loopSyntax() {
 // output: 20
 
 function rangeTotal(n1, n2) {
+  // let out = 0
+  // for (i = n1; i <= n2; i++) {
+  //   out += i
+  // }
+  // return out;
 }
 
 

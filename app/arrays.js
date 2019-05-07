@@ -4,9 +4,13 @@
 // output: ['is', 'a', 'split', 'sentence.', 'This']
 
 function rearranger(arr) {
-    arr.push(arr.splice(0, 1)[0])
+    // arr.push(arr.splice(0, 1)[0])
+    // return arr
+
+    arr.push(arr.shift())
     return arr
 }
+
 
 
 // ------------------------------------------
@@ -18,9 +22,17 @@ function rearranger(arr) {
 // output: 42
 
 function largestNum(arr) {
-    return arr.reduce((prevLargestNum, currLargestNum) => {
-        return (currLargestNum > prevLargestNum) ? currLargestNum : prevLargestNum;
-    })
+    // return arr.reduce((prevLargestNum, currLargestNum) => {
+    //     return (currLargestNum > prevLargestNum) ? currLargestNum : prevLargestNum;
+    // })
+    // let out = 0
+    // for (i = 0; i < arr.length; i++) {
+    //     let num = arr[i]
+    //     if (num > out) {
+    //         out = num
+    //     }
+    // }
+    // return out;
 }
 
 
@@ -33,7 +45,13 @@ function largestNum(arr) {
 // output: [16, 8, 4, 28]
 
 function elemsTimesLength(arr) {
-    return arr.map(el => el * arr.length)
+    // return arr.map(el => el * arr.length)
+    // let out = []
+    // for (i = 0; i < arr.length; i++) {
+    //     let num = arr[i]
+    //     out.push(num * arr.length)
+    // }
+    // return out
 }
 
 
@@ -46,6 +64,6 @@ function elemsTimesLength(arr) {
 // output: ['legume', 3, 2, 'tree', 5]
 
 function arrayFlattener(arr) {
-    return arr.flat(1000).filter(el => typeof (el) !== "object")
+    return arr.flat(Number.MAX_SAFE_INTEGER).filter(el => typeof (el) !== "object")
 }
 
