@@ -1,4 +1,4 @@
-// 1. Within the loopSyntax function, write a while loop that counts every number from 10,000,000 down to 0. Return true after the loop completes.
+// 1. Within the loopSyntax function, write a while loop that counts every number from 100,000,000 down to 0. Return true after the loop completes.
 
 function loopSyntax() {
 
@@ -26,7 +26,8 @@ function rangeTotal(n1, n2) {
 // Example:
 // input: { firstName: "Theo", middleName: "", lastName: "Gerrard" }
 // output: { firstName: "Theo", lastName: "Gerrard" }
-// Hint: Utilize a for...in loop
+// Hint: Utilize a for...in loop - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
+// Truthy Reference: https://developer.mozilla.org/en-US/docs/Glossary/Truthy
 
 function truthyExtractor(obj) {
 

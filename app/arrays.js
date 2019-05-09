@@ -39,6 +39,7 @@ function elemsTimesLength(arr) {
 // Example:
 // input:  [[['legume'], 3, []], 2, ['tree', [{}, [5]]]]
 // output: ['legume', 3, 2, 'tree', 5]
+// Primitive data types - https://developer.mozilla.org/en-US/docs/Glossary/Primitive
 
 function arrayFlattener(arr) {
 
