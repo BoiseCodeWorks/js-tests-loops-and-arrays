@@ -9,6 +9,7 @@
 // Hint: Utilize the string prototype method charCodeAt and generic method fromCharCode
 
 function letterChecker(str) {
+
 }
 
 
