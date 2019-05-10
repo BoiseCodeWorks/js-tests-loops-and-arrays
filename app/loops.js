@@ -1,4 +1,4 @@
-// 1. Within the loopSyntax function, write a while loop that counts every number from 100,000,000 down to 0. Return true after the loop completes.
+// 1. Within the loopSyntax function, write a while loop that counts every number from 1,000,000 down to 0. Return true after the loop completes.
 
 function loopSyntax() {
 
