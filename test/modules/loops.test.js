@@ -1,26 +1,14 @@
-// #region truthyExtractor helpers
-let testObj = { firstName: "Theo", middleName: "", lastName: "Gerrard" }
-let answerObj = { firstName: "Theo", lastName: "Gerrard" }
-
-function onlyTruthy(obj) {
-    if (typeof obj == "undefined") return false
-    for (let prop in obj) {
-        if (!obj[prop]) return false
-    }
-    return true
-}
-// #endregion
-
 describe("loops.js", () => {
-    describe("1. loopSyntax Function", () => {
-        let loopSyntax = window["loopSyntax"]
-        it("doesn't return until the loop has completed counting down", function () {
-            this.slow(2000)
-            chai.assert.isTrue((() => {
-                let s = performance.now()
-                loopSyntax()
-                return performance.now() - s > 25
-            })(), "Count down from 100,000,000 before you return.")
+    describe("1. factorials Function", () => {
+        let factorials = window["factorials"]
+        it("returns a number", () => {
+            chai.assert.isNumber(factorials(4), "The return type must be a number.")
+        })
+        it("returns the correct number given 4", () => {
+            chai.assert.strictEqual(factorials(4), 24, "Be sure to use the multiplication operator")
+        })
+        it("returns the correct number given 10", () => {
+            chai.assert.strictEqual(factorials(10), 3628800, "Be sure to use the multiplication operator")
         })
     })
     describe("2. rangeTotal Function", () => {
@@ -32,43 +20,17 @@ describe("loops.js", () => {
             chai.assert.strictEqual(rangeTotal(2, 6), 20, "Sum the range inclusive.")
         })
     })
-    describe("3. truthyExtractor Function", () => {
-        let truthyExtractor = window["truthyExtractor"]
-        let _sut = truthyExtractor(testObj)
-        it("returns an object", () => {
-            chai.assert.isObject(truthyExtractor(testObj), "The return type must be an object.")
+    describe("3. rangeDivisor Function", () => {
+        let rangeDivisor = window["rangeDivisor"]
+        it("returns a number", () => {
+            chai.assert.isNumber(rangeDivisor(15, 20, 5), "The return type must be a number.")
         })
-        it("Returns a new object with only truthy values", () => {
-            chai.assert.isTrue(onlyTruthy(truthyExtractor(testObj)), "The return object should only contain truthy values.")
+        it("returns the correct total of numbers divisible end of range exclusive", () => {
+            chai.assert.isAtLeast(rangeDivisor(15, 20, 5), 1, "Total divisible numbers in the range exclusive.")
+            chai.assert.isAtMost(rangeDivisor(15, 20, 5), 2, "Total divisible numbers in the range exclusive.")
         })
-        it("Returns an object that is not empty", () => {
-            chai.assert.strictEqual(truthyExtractor(testObj), answerObj, "Be sure to return an object that is not empty")
-        })
-    })
-    describe("4. findById Function", () => {
-        let findById = window["findById"]
-        it("returns an object", () => {
-            chai.assert.isObject(findById(1), "The return type must be an object.")
-        })
-        it("returns the complete user object with the target id", () => {
-            chai.assert.hasAllKeys(findById(17), { id: 17, name: 'St. MaryLou de la Playa Carmen' }, "Return the complete user object with the matching id.")
-        })
-        it("returns an object containing an error message if no matching user", () => {
-            chai.assert.hasAllKeys(findById(1000), { error: "No user with that id." }, "Return an object with an error message if no user found with the target id.")
-        })
-    })
-    describe("5. bandMemberDetails Function", () => {
-        let bandMemberDetails = window["bandMemberDetails"]
-        it("returns a string", () => {
-            chai.assert.isString(bandMemberDetails("Kris"), "The return type must be a string.")
-        })
-        it("returns a correctly formatted string with details of the correct band member", () => {
-            chai.assert.strictEqual(bandMemberDetails("Kris"), "Kris is in the band and plays the guitar", "Use string concatenation or interpolation to populate your return string with the correct info.")
-        })
-        describe("Stretch Goal", () => {
-            it("still returns properly if only part of the name is given (case insensitive)", () => {
-                chai.assert.strictEqual(bandMemberDetails("John"), "Johnny P is in the band and plays the sax", "The .includes() method could help with this challenge.")
-            })
+        it("returns the correct total of numbers divisible end of range inclusive", () => {
+            chai.assert.strictEqual(rangeDivisor(15, 20, 5), 2, "Total divisible numbers in the range inclusive.")
         })
     })
 })

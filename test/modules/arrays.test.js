@@ -40,4 +40,45 @@ describe("arrays.js", () => {
          chai.assert.includeOrderedMembers(arrayFlattener([[['legume'], 3, []], 2, ['tree', [{}, [5]]]]), ['legume', 3, 2, 'tree', 5], "Return a single dimension array of only primitives.")
       })
    })
+   describe("5. flightCost Function", () => {
+      let flightCost = window["flightCost"]
+      it("Flying coach is a lot cheaper than flying firstClass", () => {
+         chai.assert.strictEqual(flightCost("LAX", false), 500, "Be sure to return the standard cost if flightClass is set to false")
+         chai.assert.strictEqual(flightCost("CAN", false), 750)
+      })
+
+      it("Flying to Canada first class can be expensive", () => {
+         chai.assert.strictEqual(flightCost("SEA", true), 1200, "Be sure to check if firstClass is set to true")
+         chai.assert.strictEqual(flightCost("CAN", true), 6200)
+      })
+      it("Don't be case sensitive!", () => {
+         chai.assert.strictEqual(flightCost('sea', false), 800)
+      })
+   })
+   describe("6. findById Function", () => {
+      let findById = window["findById"]
+      it("returns an object", () => {
+         chai.assert.isObject(findById(1), "The return type must be an object.")
+      })
+      it("returns the complete user object with the target id", () => {
+         chai.assert.hasAllKeys(findById(17), { id: 17, name: 'St. MaryLou de la Playa Carmen' }, "Return the complete user object with the matching id.")
+      })
+      it("returns an object containing an error message if no matching user", () => {
+         chai.assert.hasAllKeys(findById(1000), { error: "No user with that id." }, "Return an object with an error message if no user found with the target id.")
+      })
+   })
+   describe("7. bandMemberDetails Function", () => {
+      let bandMemberDetails = window["bandMemberDetails"]
+      it("returns a string", () => {
+         chai.assert.isString(bandMemberDetails("Kris"), "The return type must be a string.")
+      })
+      it("returns a correctly formatted string with details of the correct band member", () => {
+         chai.assert.strictEqual(bandMemberDetails("Kris"), "Kris is in the band and plays the guitar", "Use string concatenation or interpolation to populate your return string with the correct info.")
+      })
+      describe("Stretch Goal", () => {
+         it("still returns properly if only part of the name is given (case insensitive)", () => {
+            chai.assert.strictEqual(bandMemberDetails("John"), "Johnny P is in the band and plays the sax", "The .includes() method could help with this challenge.")
+         })
+      })
+   })
 })
