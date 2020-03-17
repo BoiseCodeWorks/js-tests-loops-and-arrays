@@ -1,17 +1,4 @@
-// 1. Write a function that sums up all of the numbers in a range
-// Example:
-// input: 2, 6
-// output: 20
-
-function rangeTotal(n1, n2) {
-
-}
-
-
-// ------------------------------------------
-
-
-// 2. Within the factorials function, write a loop that begins at 1 and multiplies every consecutive
+// 1. Within the factorials function, write a loop that begins at 1 and multiplies every consecutive
 // number up to and including the given number(num). Return the total after the loop completes.
 // Example:
 // input: 4
@@ -22,6 +9,16 @@ function factorials(num) {
 
 }
 
+// ------------------------------------------
+
+// 2. Write a function that sums up all of the numbers in a range
+// Example:
+// input: 2, 6
+// output: 20
+
+function rangeTotal(n1, n2) {
+
+}
 
 // ------------------------------------------
 
