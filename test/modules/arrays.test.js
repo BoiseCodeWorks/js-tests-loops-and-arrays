@@ -31,16 +31,7 @@ describe("arrays.js", () => {
          chai.assert.includeOrderedMembers(elemsTimesLength([4, 2, 1, 7]), [16, 8, 4, 28], "Returns an array containing modified elements of the given array.")
       })
    })
-   describe("4. arrayFlattener Function", () => {
-      let arrayFlattener = window["arrayFlattener"]
-      it("returns an array", () => {
-         chai.assert.isArray(arrayFlattener([3]), "The return type must be an array.")
-      })
-      it("returns a single dimension array of only primitive elements", () => {
-         chai.assert.includeOrderedMembers(arrayFlattener([[['legume'], 3, []], 2, ['tree', [{}, [5]]]]), ['legume', 3, 2, 'tree', 5], "Return a single dimension array of only primitives.")
-      })
-   })
-   describe("5. flightCost Function", () => {
+   describe("4. flightCost Function", () => {
       let flightCost = window["flightCost"]
       it("Flying coach is a lot cheaper than flying firstClass", () => {
          chai.assert.strictEqual(flightCost("LAX", false), 500, "Be sure to return the standard cost if flightClass is set to false")
@@ -55,7 +46,7 @@ describe("arrays.js", () => {
          chai.assert.strictEqual(flightCost('sea', false), 800)
       })
    })
-   describe("6. findById Function", () => {
+   describe("5. findById Function", () => {
       let findById = window["findById"]
       it("returns an object", () => {
          chai.assert.isObject(findById(1), "The return type must be an object.")
@@ -67,7 +58,7 @@ describe("arrays.js", () => {
          chai.assert.hasAllKeys(findById(1000), { error: "No user with that id." }, "Return an object with an error message if no user found with the target id.")
       })
    })
-   describe("7. bandMemberDetails Function", () => {
+   describe("6. bandMemberDetails Function", () => {
       let bandMemberDetails = window["bandMemberDetails"]
       it("returns a string", () => {
          chai.assert.isString(bandMemberDetails("Kris"), "The return type must be a string.")
