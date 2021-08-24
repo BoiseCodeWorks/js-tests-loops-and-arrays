@@ -10,16 +10,11 @@ describe("arrays.js", () => {
    })
    describe("2. largestNum Function", () => {
       let largestNum = window["largestNum"]
-      it("returns a number (or object if attempting the stretch goal)", () => {
-         chai.assert.isTrue(typeof largestNum([1, 2, 3]) == "number" || typeof largestNum([1, 2, 3]) == "object", "The return type must be a number or an object if attempting the stretch goal.")
-      })
       it("returns the largest number", () => {
          chai.assert.strictEqual(largestNum([10, 12, 3, 2, 42]), 42, "Find and return the largesgt number within the array.")
       })
-      describe("Stretch Goal", () => {
-         it("if there's duplicates then return an object with the large number as the key and the amount of duplicates as the value", () => {
-            chai.assert.propertyVal(largestNum([23, 12, 4, 6, 23, 23, 23, 13]), "23", 4, "Should return an object like: { largestNum: numberOfOccurances }")
-         })
+      it("returns the largest number on all arrays", () => {
+         chai.assert.strictEqual(largestNum([10, 12, 3, 2]), 10, "Find and return the largesgt number within the array.")
       })
    })
    describe("3. elemsTimesLength Function", () => {
